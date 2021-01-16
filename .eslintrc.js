@@ -1,0 +1,34 @@
+const RULES = {
+  OFF: "off",
+  WARN: "warn",
+  ERROR: "error",
+}
+
+module.exports = {
+  env: {
+    browser: true,
+    es2021: true,
+    node: true,
+  },
+  extends: ["plugin:react/recommended", "standard", "prettier"],
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 12,
+    sourceType: "module",
+  },
+  plugins: ["react"],
+  rules: {
+    indent: RULES.OFF,
+    "no-unused-vars": RULES.WARN,
+    "prefer-const": RULES.OFF,
+    "react/display-name": RULES.OFF,
+    "react/prop-types": RULES.OFF,
+    "react/react-in-jsx-scope":
+      RULES.OFF /* cuando no tengo la libreria de react */,
+    "no-undef": RULES.OFF,
+    // "scape-before-function-paren": RULES.OFF,
+    // quotes: ["warn", "single"],
+  },
+}
